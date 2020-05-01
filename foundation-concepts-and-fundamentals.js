@@ -159,3 +159,17 @@ function sumToOne(num) {
 };
 var x = sumToOne(12348);
 console.log(x)
+
+/*Fibonacci
+Implement the Fibonacci function, a famous mathematical equation that generates a numerical
+sequence such that each number is the sum of the previous two. The Fibonacci numbers at index 0
+and 1, coincidentally, have values of 0 and 1. Your function should accept an argument of which
+Fibonacci number.
+Examples: fibonacci(2) = 1, fibonacci(3) = 2, fibonacci(4) = 3, fibonacci(5) = 5, etc*/
+
+function fibonacci(num){
+  if (num === 0 || num === 1 ){
+    return num
+  }
+  else return fibonacci(num  -2) + fibonacci(num  -1);
+  }
