@@ -191,3 +191,31 @@ function lastDigitAtoB(a,b){
   }
   return (a%10);
 }
+
+/*
+Create function clockHandAngles(seconds) that, given the number of seconds since 12:00:00, will
+print the angles (in degrees) of the hour, minute and second hands. As a quick review, there are 360
+degrees in a full arc rotation. Treat “straight-up” 12:00:00 as 0 degrees for all hands. 
+*/
+
+function clockHandAngles(sec){
+  var sh = 0;
+  var mh = 0;
+  var hh = 0;
+
+   while (sec >= 60){
+     sec -= 60
+    sh = sec
+    mh++
+   }
+   while (mh >= 60){
+    mh -= 60
+    hh++
+   }
+   while (hh >= 12){
+      hh -=12
+   }
+   console.log("angle of second hand is " + sh*6 + " degrees");
+   console.log("angle of minute hand is " + mh*6 + " degrees");
+   console.log("angle of hour hand is " + hh*30 + " degrees");
+   }
