@@ -28,3 +28,11 @@ function popFront(arr){
 the value into the array at the given index. Do this
 without using built-in array methods */
 
+function insertAt(arr,index,num){
+    for(i = arr.length-1; i>=index; i--){
+        arr[i+1] = arr[i]
+    }
+    arr[index] = num;
+    return arr
+}
+console.log(insertAt([1,2,3,4,5],1,3))
