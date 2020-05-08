@@ -44,7 +44,7 @@ except pop(). */
 
 function removeAt(arr,indx){
     var front = arr[indx]
-    for(i = arr[indx-1]; i<arr.length; i++){
+    for(i = indx; i<arr.length; i++){
         arr[i] = arr[i+1]
     }
     arr.pop();
