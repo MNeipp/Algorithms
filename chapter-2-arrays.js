@@ -71,3 +71,46 @@ accepts an array and removes any values that
 are less than zero.
 Second-level challenge: don’t use nested loops. */
 
+function removeNegatives(arr){
+    for(var i = 0; i < arr.length; i++){
+        if (arr[arr.length-1] < 0){
+            arr.pop()
+        }
+        if (arr[i] < 0){
+            var temp = arr[arr.length-1];
+            arr[arr.length-1] = arr[i]
+            arr[i] = temp
+            arr.pop()
+        }
+    }
+    return arr;
+}
+
+/* Skyline Heights
+You are given an array with heights of consecutive buildings in the city. For example, [-1,7,3] would
+represent three buildings: first is actually below street level, second is seven stories high, and third is
+three stories high (but hidden behind the seven-story onbe). You are situated at street level. Return an
+array containing heights of the buildings you can see, in order. Given [1,-1,7,3] return [1,7]. */
+
+function buildings(arr, myElevation){
+    newArr = []
+    maxHeight = arr[0]
+    for (var i = 0; i < arr.length; i++){
+        if(maxHeight <= arr[i]){
+            maxHeight = arr[i];
+            // console.log(maxHeight);
+        }
+        if (arr[i] >= myElevation && arr[i] >= maxHeight){
+            newArr.push(arr[i]);
+        }
+    }
+    return newArr;
+}
+
+/* Binary Search
+Given a sorted array and a value, return whether
+that value is present in the array. Do not
+sequentially iterate the entire array. Instead,
+‘divide and conquer’, taking advantage of the fact
+that the array is sorted. */
+
