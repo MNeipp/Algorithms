@@ -114,3 +114,28 @@ sequentially iterate the entire array. Instead,
 ‘divide and conquer’, taking advantage of the fact
 that the array is sorted. */
 
+function binarySearch(arr, num, high, low) {
+    var mid = Math.floor((low+high)/2);
+    var high = arr.length-1;
+    var low = 0; 
+    while (num != arr[mid]) {
+        mid = (low+high) / 2;
+        if (num < arr[mid])
+            if (num == arr[0]) {
+                return `${num} is located at arr[0]`;
+            }
+        if (num == arr[arr.length - 1]) {
+            return `${num} is located at arr[${arr.length-1}]`;
+        }
+        if (num < arr[mid]){
+            high = mid;
+        }
+        if (num > arr[mid]){
+            low = mid;
+        }
+        if (low == high - 1){
+            return `${num} is not located in this array`
+        }
+    }
+    return `${num} is located at arr[${mid}]`
+}
