@@ -168,3 +168,20 @@ function rotateArr(arr, places){
  }
 
  console.log(rotateArr([1,2,3,4,5,6],4))
+
+ /* Second-to-Last
+Return the second-to-last element of an array.
+ */
+
+function secondToLast(arr){
+    var i = arr[arr.length-2]
+    return i
+ }
+
+ /* Nth-to-Last
+Return the element that is N-from-array’s-end. */
+
+function nthToLast(arr, n){
+    var i = arr[arr.length-1-n]
+    return i
+ }
