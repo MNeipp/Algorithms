@@ -185,3 +185,26 @@ function nthToLast(arr, n){
     var i = arr[arr.length-1-n]
     return i
  }
+
+/*  Second-Largest
+ Return the second-largest element of an array. */
+
+ function secondLargest(arr) {
+    max = arr[0]
+    second = arr[0]
+    for (var i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            second = max
+            max = arr[i]
+        }
+        if (arr[i] > second && arr[i] < max){
+            second = arr[i]
+        }
+    }
+    return second
+}
+
+/* Nth-Largest
+Given an array, return the Nth-largest element:
+there should be (N - 1) elements that are larger */
+
