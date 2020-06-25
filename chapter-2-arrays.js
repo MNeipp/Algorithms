@@ -207,4 +207,45 @@ function nthToLast(arr, n){
 /* Nth-Largest
 Given an array, return the Nth-largest element:
 there should be (N - 1) elements that are larger */
+function nthLargest(arr,nth) {
+    var temp
+    for(var i = 0; i < arr.length; i++){
+        for (var j = i+1; j < arr.length; j++){
+            if (arr[i] > arr[j]){
+                temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp
+            }
+        }
+    }
+    return arr[arr.length-nth]
+}
 
+// arrConcat
+// Replicate JavaScript’s concat(). Create a
+// standalone function that accepts two arrays.
+// Return a new array containing the first array’s
+// elements, followed by the second array’s
+// elements. Do not alter the original arrays.
+
+function arrConcat(arr1, arr2){
+    for (var i = 0; i < arr2.length; i++){
+        arr1.push(arr2[i])
+    }
+    return arr1
+}
+
+// Shuffle
+// Recreate the shuffle()built into JavaScript, to
+// efficiently shuffle a given array’s values.
+
+function shuffle(arr){
+    var temp
+    for (i = arr.length-1; i >=0; i--){
+        var j = Math.floor(Math.random() * arr.length)
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    return arr
+}
