@@ -197,7 +197,7 @@ function nthToLast(arr, n){
             second = max
             max = arr[i]
         }
-        if (arr[i] > second && arr[i] < max){
+        else if (arr[i] > second && arr[i] < max){
             second = arr[i]
         }
     }
