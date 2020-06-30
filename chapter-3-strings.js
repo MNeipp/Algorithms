@@ -1,0 +1,35 @@
+// Arrs2Map
+// Given two arrays, create an associative array (map) containing keys of the first, and values of the
+// second. For arr1 = ["abc", 3, "yo"] and arr2 = [42, "wassup", true], return {"abc":
+// 42, 3: "wassup", "yo": true}
+
+function arrs2Map(arr1, arr2){
+    var dict={}
+    for (var i = 0; i<arr1.length; i++){
+        dict[arr1[i]] = arr2[i]
+    }
+    return dict
+}
+
+// InvertHash
+// Create invertHash(assocArr) that converts a hash’s keys to values and values to corresponding keys
+
+function invertHash(dict){
+    newDict = {}
+    for (var k in dict){
+        newDict[dict[k]] = k
+    }
+    return newDict
+}
+
+// ReverseString
+// Implement a function reverseString(str) that, given a string, will return the string of the same length but with characters reversed. Example: given "creature", return "erutaerc". Do not use the built-in reverse() function!
+
+function reverseString(str){
+    newStr=[]
+    for(var i = str.length-1; i >=0; i--){
+        newStr.push(str[i])
+    }
+
+    return newStr.join('')
+}
