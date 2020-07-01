@@ -33,3 +33,41 @@ function reverseString(str){
 
     return newStr.join('')
 }
+
+// Remove Blanks
+// Create a function that, given a string, returns the string, without blanks
+
+function removeBlanks(str){
+    newStr = str.split(' ')
+    newStr=newStr.join('')
+    return newStr
+}
+
+// Get String Digits
+// Create a JavaScript function that given a string, returns the integer made from the string’s digits. Given
+// "0s1a3y5w7h9a2t4?6!8?0", the function should return the number 1,357,924,680\
+
+function getDigits(str){
+    str=str.split('')
+    digits = []
+    for (x of str){
+        num = parseInt(x)
+        if (isFinite(num)){
+            digits.push(num)
+        }
+    }
+    return digits.join('')
+}
+
+/* Acronyms
+Create a function that, given a string, returns the string’s acronym (first letters only, capitalized) */
+
+function acronyms(str){
+    str = str.split(' ')
+    acronym = []
+    for (x of str){
+        acronym.push(x[0])
+    }
+    return acronym.join('').toUpperCase()
+
+}
