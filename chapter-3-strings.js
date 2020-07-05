@@ -71,3 +71,52 @@ function acronyms(str){
     return acronym.join('').toUpperCase()
 
 }
+
+/* Parens Valid
+Create a function that, given an input string,
+returns a boolean whether parentheses in that
+string are valid. */
+
+function parensValid(str){
+    let stack = []
+    str = str.split('')
+    for (var i = 0; i < str.length; i++){
+        if (str[i] == "("){
+            stack.push(str[i])
+        }
+        else if (str[i] == ")" && stack.length == 0){
+            return false
+        }
+        else if (str[i] == ")"){
+            stack.pop()
+        }
+    }
+    if (stack.length == 0){
+        return true
+    }
+    return false
+}
+
+/* Given a string, returns whether the sequence of
+various parentheses, braces and brackets within
+it are valid. */
+
+function bracesValid(str){
+    let stack = []
+    str = str.split('')
+    for (let i = 0; i < str.length; i++){
+        if (str[i] == "(" || str[i] == "[" || str[i] == "{"){
+            stack.push(str[i])
+        }
+        else if (str[i] == ")" && stack.length == 0 || str[i] == "]" && stack.length == 0 || str[i] == "}" && stack.length == 0){
+            return false
+        }
+        else if (str[i] == ")" || str[i] == "]" || str[i] == "}"){
+            stack.pop()
+        }
+    }
+    if (stack.length == 0){
+        return true
+    }
+    return false
+}
