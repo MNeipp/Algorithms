@@ -56,7 +56,7 @@ function getDigits(str){
             digits.push(num)
         }
     }
-    return digits.join('')
+    return parseInt(digits.join(''))
 }
 
 /* Acronyms
