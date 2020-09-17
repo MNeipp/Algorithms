@@ -27,3 +27,26 @@ function mergeArrays(arr1, arr2){
     }
     return newArr
 }
+
+// Cafe Order Checker
+function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
+
+    let tod=0
+    let dio=0
+    
+    for (let i = 0; i < servedOrders.length; i++){
+      if (servedOrders.length !== dineInOrders.length + takeOutOrders.length){
+        return false
+      }
+      if (servedOrders[i] == takeOutOrders[tod]){
+        tod++
+        continue
+      }
+      else if (servedOrders[i] == dineInOrders[dio]){
+        dio++
+        continue
+      }
+      return false
+    }
+    return true
+  }
