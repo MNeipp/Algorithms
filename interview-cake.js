@@ -50,3 +50,27 @@ function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
     }
     return true
   }
+
+  // Given the array of IDs, which contains many duplicate integers and one unique integer, find the unique integer.
+
+  function findUniqueDeliveryId(deliveryIds) {
+
+    // Find the one unique ID in the array
+    deliverySet = new Set(deliveryIds);
+    
+    sumSet = Array.from(deliverySet).reduce((a,b) => a+b, 0);
+    sumDelivery = deliveryIds.reduce((a,b) => a+b, 0);
+    
+    return (2*sumSet) - sumDelivery
+  }
+
+  function findUniqueDeliveryId(deliveryIds) {
+
+    var uniqueDeliveryId = 0;
+  
+    deliveryIds.forEach(deliveryId => {
+      uniqueDeliveryId ^= deliveryId;
+    });
+  
+    return uniqueDeliveryId;
+  }
