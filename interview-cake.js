@@ -53,6 +53,7 @@ function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
 
   // Given the array of IDs, which contains many duplicate integers and one unique integer, find the unique integer.
 
+  //reduce solution
   function findUniqueDeliveryId(deliveryIds) {
 
     // Find the one unique ID in the array
@@ -64,6 +65,7 @@ function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
     return (2*sumSet) - sumDelivery
   }
 
+  // XOR bitshifting solution 
   function findUniqueDeliveryId(deliveryIds) {
 
     var uniqueDeliveryId = 0;
