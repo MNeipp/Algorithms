@@ -109,6 +109,25 @@ function canTwoMoviesFillFlight(movieLengths, flightLength) {
     return false;
   }
   
+  //palindrome permutations
+  function hasPalindromePermutation(theString) {
+
+    const hashMap = new Set()
+    for (let i = 0; i < theString.length; i++){
+      if (hashMap.has(theString[i])){
+        hashMap.delete(theString[i]);
+      } else {
+        hashMap.add(theString[i])
+      }
+    }
+    if (hashMap.size <= 1){
+      return true;
+    }
+    
+  
+    return false;
+  }
+  
   
   
   
