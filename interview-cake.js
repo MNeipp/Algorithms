@@ -89,3 +89,26 @@ function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
     const arrSum = numbers.reduce((a, b) => a + b);
     return arrSum - sum;
   }
+
+// find matching movie lengths
+function canTwoMoviesFillFlight(movieLengths, flightLength) {
+
+  // Movie1 + Movie 2 = FlightLength
+  const moviesSeen = new Set();
+  
+  for (let i = 0; i < movieLengths.length; i++){
+    const firstMovie = movieLengths[i];
+    
+    const secondMovie = flightLength - firstMovie;
+    if (moviesSeen.has(secondMovie)){
+      return true;
+    }
+    moviesSeen.add(firstMovie);
+  }
+  
+    return false;
+  }
+  
+  
+  
+  
