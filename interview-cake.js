@@ -172,4 +172,34 @@ function canTwoMoviesFillFlight(movieLengths, flightLength) {
     return highestProductOf3;
   }
   
+  function getProductsOfAllIntsExceptAtIndex(arr) {
+
+    // Make a list of the products
+    if (arr.length < 2){
+      throw new Error('Array must have at least 2 numbers')
+    }
+    
+    const productsExcept = [];
+    
+    let productSoFar = 1;
+    
+    for (let i = 0; i < arr.length; i++){
+      productsExcept[i] = productSoFar;
+      productSoFar *= arr[i]
+    }
+    
+    productSoFar = 1;
+    for (let j = arr.length-1; j >=0; j--){
+      productsExcept[j] *= productSoFar;
+      productSoFar *= arr[j]
+    }
+    
+  
+    return productsExcept;
+  }
+  
+  
+  
+  
+  
   
